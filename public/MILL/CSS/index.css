@@ -1,0 +1,330 @@
+/*:root {
+    --primary-color:  rgba(33, 37, 41, 0.7);
+    --secondary-color: #2ecc71;
+    --background-color:  rgba(33, 37, 41, 0.7);
+    --text-color: #333333;
+}*/
+:root {
+    --primary-color:  rgba(33, 37, 41);
+    --secondary-color: #2ecc71;
+    --background-color:   rgba(94, 94, 94,.6);
+    --body-background-color:   rgba(158, 158, 158, 0.7);
+
+    --text-color: #ffffff;
+}
+
+
+.content, header, footer {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+body {
+    font-family: "Baloo Bhai 2", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: #000000;
+    background: url("../../photos/home.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: transform 0.3   s ease, opacity 0.3s ease, color 0.3   s ease;
+
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    /* Ensure content can scroll if needed */
+    overflow-y: auto;
+}
+
+header {
+    background-color : var(--background-color);
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--background-color);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+
+#loginbtn {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5px;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 45px;
+    border-radius: 40px;
+    border: 3px solid #42d3a5;
+    background-color: #42d3a5;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
+#loginbtn:hover {
+    background-color: #157758;
+    border: 3px solid #157758;
+}
+
+#loginbtn:active {
+    letter-spacing: 4px;
+}
+
+#loginbtn:after {
+    }
+
+
+#callmebtn {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 40px;
+    border: 3px solid #42d3a5;
+    background-color: #42d3a5;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
+#callmebtn:hover {
+    background-color: #157758;
+    border: 3px solid #157758;
+}
+
+#callmebtn:active {
+    letter-spacing: 4px;
+}
+
+#callmebtn:after {
+    content: "CALL US";
+}
+
+
+.mcontainer {
+
+    margin: 10px;
+    padding: 70px;
+
+    /* border: 5px solid wheat; */
+    background-color: var(--body-background-color);
+    border-radius: 20px;
+    /* color: #d7dbd a; */
+    text-align: center;
+    /* Center content within the container */
+}
+
+.mcontainer button {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    color: white;
+    background-color: #3e583b;
+    /* Dark green background */
+    border: none;
+    border-radius: 25px;
+    /* Rounded corners */
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    /* Drop shadow */
+    outline: none;
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    /* Ensure it doesn't stretch to full width */
+}
+
+.mcontainer button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Light overlay */
+    border-radius: 25px;
+    transform: translate(-50%, -50%) scale(0.9);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.mcontainer button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.mcontainer button:hover {
+    background-color: #236e2a;
+    /* Darker green on hover */
+}
+
+.buy {
+    text-decoration: none;
+    color: white;
+}
+
+
+            
+    .toggle-theme {
+        margin-right: 10px;
+        background: rgba(0, 93, 93, 0.5);
+        height: 3rem;
+        width: 3rem;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.5s ease;
+    }
+    
+    .toggle-theme:hover,
+    .togge-theme:focus {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    
+    .toggle-theme i {
+        font-size: 2rem;
+        position: absolute;
+        transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+    }
+    
+    .fa-sun {
+        color: rgb(255, 72, 0);
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    
+    .fa-moon {
+        color: rgb(251, 178, 6);
+        transform: translateX(0px);
+    }
+    
+    .checkbox {
+        display: none;
+    }
+    
+    .checkbox:checked ~ .toggle-theme .fa-sun{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    
+    .checkbox:checked ~ .toggle-theme .fa-moon{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    
+    /* Dark Theme */
+     
+    body.dark {
+        color: #f0f0f0;
+        background-color: rgba(0, 0, 0, 1); /* Black overlay with 50% opacity */
+        background: url("../../photos/home-dark.jpg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 768px) {
+            body {
+                background: url("../../pages/home3.jpg");
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                background: url("../../pages/home3.jpg");
+            } 
+        }
+    }
+    
+
+    body.dark header,
+    body.dark footer {
+        background-color: rgba(85, 90, 95, 0.7);
+    }
+    
+    body.dark .mcontainer {
+        background-color: rgba(85, 90, 95, 0.7);
+    }
+
+    body.dark #callbtn {
+        border: 3px solid #ffffff;
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    
+  
+@media (max-width: 768px) {
+    body {
+        /* background: url("../pages/home3.jpg"); */
+    }
+
+    #callbtn {
+        display: none;
+    }
+
+    .mcontainer {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .mcontainer h1 {
+        font-size: 1.8em;
+    }
+
+    .mcontainer h3 {
+        font-size: 1.1em;
+    }
+
+    .mcontainer button {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        /* background: url("../pages/home3.jpg"); */
+    }
+
+    .mcontainer {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .mcontainer h1 {
+        font-size: 1.5em;
+    }
+
+    .mcontainer h3 {
+        font-size: 1em;
+    }
+
+    .mcontainer button {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}

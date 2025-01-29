@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>home</title>
+    <script src="MILL/JS/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="stylesheet" href="MILL/bootstrap-5.3.3-dist/bootstrap.min.css">
+    <link rel="stylesheet" href="MILL/CSS/index.css">
+    <script src="https://kit.fontawesome.com/836a943e18.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const theme = localStorage.getItem("theme") || "light"; // Default to light if not set
+            if (theme === "dark") {
+                document.body.classList.add("dark");
+                document.querySelector("#checkbox").checked = true; // Check the toggle
+            }
+        
+            // Toggle theme on checkbox change
+            document.querySelector("#checkbox").addEventListener("change", () => {
+                document.body.classList.toggle("dark");
+                const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+                localStorage.setItem("theme", currentTheme);
+            });
+        });
+    </script>
+</head>
+
+<body class="theme">
+    <header>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img style="border: #000000 solid 1px; border-radius:40px;" class="bi me-2" src="photos/logo.png" width="40" height="32" role="img" aria-label="Bootstrap">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/product" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="/booking" class="nav-link px-2 text-white">Booking</a></li>
+                    <li><a href="/FAQ" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="/about" class="nav-link px-2 text-white">Location</a></li>
+                </ul>
+                <input type="checkbox" id="checkbox" class="checkbox" />
+                <label for="checkbox" class="toggle-theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </label>
+                <button id="callmebtn"></button>
+                <!-- Login Button -->
+                <button id="loginbtn"  onclick="window.location.href = '/login'" > <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg> </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <main>
+            <div class="container">
+                <div class="mcontainer">
+                    <h1>Why us?</h1><br>
+                    <h3>The main reason to choose us is ...</h3>
+                    <h3>We Believe in 'Quality' over 'Quantity'</h3><br>
+                    <button><strong><a href="/booking" class="buy">Let's Buy</a></strong></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img style="border: #000000 solid 1px; border-radius:40px;" class="bi me-2" src="photos/logo.png" width="40" height="32" role="img" aria-label="Bootstrap">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <span class="mb-3 mb-md-0 text-light">© 2024 Mama Ni Maher Mini Oil Mill, Inc</span>
+                </ul>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/umang_borsaniya_">
+                            <svg class="bi color-light" color="white" width="24" height="28" xmlns="http://www.w3.org/2000/svg" x="0px" y="3px" viewBox="0,0,300,150">
+                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(5.12,5.12)">
+                                        <path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/umang_borsaniya_">
+                            <svg class="bi" style="padding-top: 7px;" width="24" height="29" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,256,256">
+                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(5.12,5.12)">
+                                        <path d="M25,3c-12.13844,0 -22,9.86156 -22,22c0,11.01913 8.12753,20.13835 18.71289,21.72852l1.14844,0.17383v-17.33594h-5.19727v-3.51953h5.19727v-4.67383c0,-2.87808 0.69065,-4.77363 1.81445,-6.05078c1.1238,-1.27715 2.71138,-2.0293 4.71484,-2.0293c1.5044,0 3.01447,0.2191 3.64844,0.31445v3.71485h-2.07324c-1.39922,0 -1.99949,0.65645 -2.38281,1.08008c-0.38332,0.42363 -0.85499,1.12329 -0.85499,2.23633v5.41894h6.23242l-0.51758,3.51953h-5.71484v17.04102l1.14844,-0.17383c10.58536,-1.59017 18.71289,-10.70939 18.71289,-21.72852c0,-12.13844 -9.86156,-22 -22,-22z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Login & Registration Form -->
+    <div id="id01" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <div class="tab">
+                <button class="tablinks active" onclick="openTab(event, 'Login')">Login</button>
+                <button class="tablinks" onclick="openTab(event, 'Register')">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

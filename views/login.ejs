@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="stylesheet" href="MILL/bootstrap-5.3.3-dist/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/836a943e18.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="MILL/CSS/pages.css">
+    <script src="/MILL/JS/"></script>
+    <script src="MILL/JS/theme.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.body;
+            const checkbox = document.querySelector("#checkbox");
+            const theme = localStorage.getItem("theme") || "light";
+
+            // Set initial theme
+            if (theme === "dark") {
+                body.classList.add("dark");
+                checkbox.checked = true;
+            } else {
+                body.classList.remove("dark");
+                checkbox.checked = false;
+            }
+
+            // Toggle theme on checkbox change
+            checkbox.addEventListener("change", () => {
+                if (checkbox.checked) {
+                    body.classList.add("dark");
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    body.classList.remove("dark");
+                    localStorage.setItem("theme", "light");
+                }
+            });
+        });
+    </script>
+
+<style>
+    /* Container */
+#form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Blurred glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Title */
+#form-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.toggle-buttons .modern-btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+/* Form Styles */
+.modern-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #444;
+}
+
+.modern-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.modern-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Button Styles */
+.modern-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+.google-logo {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    #form-container {
+        padding: 15px;
+    }
+    .modern-btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img style="border: #000000 solid 1px; border-radius:40px;" class="bi me-2" src="photos/logo.png" width="40" height="32" role="img" aria-label="Bootstrap">
+                    </a>
+                      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+                        <li><a href="/product" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="/booking" class="nav-link px-2 text-white">Booking</a></li>
+                        <li><a href="/FAQ" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="/about" class="nav-link px-2 text-white">Location</a></li>
+                    </ul>
+                    <input type="checkbox" id="checkbox" class="checkbox" />
+                    <label for="checkbox" class="toggle-theme">
+                      <i class="fas fa-moon"></i>
+                      <i class="fas fa-sun"></i>
+                    </label>
+                    <button id="callbtn"></button>
+                    <button id="loginbtn"  onclick="window.location.href = '/login'" > <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg> </button>
+
+                </div>
+            </div>
+        </header>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="content mapcontainer">
+    <main>
+        <div class="mcontainer modern-container " style=" width: fit-content; margin: auto;">
+        <div id="form-container" class="modern-container">
+            <h1 id="form-title">Login</h1>
+        
+            <!-- Toggle Buttons -->
+            <div class="toggle-buttons">
+                <button class="modern-btn btn-primary" onclick="showLogin()">Login</button>
+                <button class="modern-btn btn-success" onclick="showRegister()">Register</button>
+                <button class="modern-btn btn-danger" onclick="googleLogin()">Google Login</button>
+            </div>
+        
+            <!-- Login Form -->
+            <form id="login-form" action="/login_action" method="POST" class="modern-form" style="display: block;">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" class="modern-input" required placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="modern-input" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="modern-btn btn-primary">Login</button>
+            </form>
+        
+            <!-- Register Form -->
+            <form id="register-form" action="/register_action" method="POST" class="modern-form" style="display: none;">
+                <div class="form-group">
+                    <label for="reg_username" class="form-label">Username</label>
+                    <input type="text" id="reg_username" name="username" class="modern-input" required placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="modern-input" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="reg_password" class="form-label">Password</label>
+                    <input type="password" id="reg_password" name="password" class="modern-input" required placeholder="Choose a password">
+                </div>
+                <button type="submit" class="modern-btn btn-success">Register</button>
+            </form>
+        
+            <!-- Google Login -->
+            <div id="google-login" style="display: none;">
+                <button class="modern-btn btn-danger" onclick="window.location.href='/auth/google'">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 120 120">
+                        <path d="M107.145,55H100H87.569H60v18h27.569c-1.852,5.677-5.408,10.585-10.063,14.118 C72.642,90.809,66.578,93,60,93c-12.574,0-23.278-8.002-27.299-19.191C31.6,70.745,31,67.443,31,64 c0-3.839,0.746-7.505,2.101-10.858C37.399,42.505,47.823,35,60,35c7.365,0,14.083,2.75,19.198,7.273l13.699-13.21 C84.305,20.969,72.736,16,60,16c-18.422,0-34.419,10.377-42.466,25.605C14,48.291,12,55.912,12,64c0,7.882,1.9,15.32,5.267,21.882 C25.223,101.389,41.372,112,60,112c12.382,0,23.668-4.688,32.182-12.386C101.896,90.831,108,78.128,108,64 C108,60.922,107.699,57.917,107.145,55z" opacity=".35"></path><path fill="#44bf00" d="M17.267,81.882C25.223,97.389,41.372,108,60,108c12.382,0,23.668-4.688,32.182-12.386L77.506,83.118 C72.642,86.809,66.577,89,60,89c-12.574,0-23.278-8.002-27.299-19.191L17.267,81.882z"></path><path d="M77.506,83.118c-0.684,0.553-1.685,1.158-2.398,1.638l14.711,12.846 c0.807-0.641,1.6-1.298,2.363-1.988L77.506,83.118z" opacity=".35"></path><path fill="#0075ff" d="M92.182,95.614C101.896,86.83,108,74.128,108,60c0-3.078-0.301-6.083-0.855-9H100H87.569H60v18 h27.569c-1.852,5.677-5.408,10.585-10.063,14.118L92.182,95.614z"></path><path d="M32.701,69.809L17.267,81.882c0.486,0.948,1.004,1.877,1.551,2.787l15.3-11.576 C33.63,72.181,33.05,70.804,32.701,69.809z" opacity=".35"></path><path fill="#ffc400" d="M17.267,81.882C13.9,75.32,12,67.882,12,60c0-8.088,2-15.709,5.534-22.395l15.568,11.537 C31.746,52.496,31,56.161,31,60c0,3.443,0.6,6.745,1.701,9.809L17.267,81.882z"></path><path d="M17.534,37.605c-0.482,0.844-1.169,2.36-1.564,3.251l16.059,11.491 c0.299-1.095,0.653-2.167,1.072-3.205L17.534,37.605z" opacity=".35"></path><path fill="#ff1200" d="M33.101,49.142C37.399,38.505,47.823,31,60,31c7.365,0,14.083,2.75,19.198,7.273l13.699-13.21 C84.305,16.969,72.736,12,60,12c-18.422,0-34.419,10.377-42.466,25.605L33.101,49.142z"></path>
+                        </svg>
+                    Login with Google
+                </button>
+            </div>
+        </div>
+    </div>   
+    </main>
+</div>
+<script>
+     // Functions to toggle forms
+     function showLogin() {
+        document.getElementById('form-title').innerText = 'Login';
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('google-login').style.display = 'none';
+    }
+
+    function showRegister() {
+        document.getElementById('form-title').innerText = 'Register';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+        document.getElementById('google-login').style.display = 'none';
+    }
+
+    function googleLogin() {
+        document.getElementById('form-title').innerText = 'Google Login';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('google-login').style.display = 'block';
+    }
+</script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<footer>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img style="border: #000000 solid 1px; border-radius:40px;" class="bi me-2" src="photos/logo.png" width="40" height="32" role="img" aria-label="Bootstrap">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <span class="mb-3 mb-md-0 text-light">© 2024 Mama Ni Maher Mini Oil Mill, Inc</span>
+                </ul>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/umang_borsaniya_">
+                            <svg class="bi color-light" color="white" width="24" height="28" xmlns="http://www.w3.org/2000/svg" x="0px" y="3px" viewBox="0,0,300,150">
+                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(5.12,5.12)">
+                                        <path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/umang_borsaniya_">
+                        <svg class="bi" style="padding-top: 7px;" width="24" height="29" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,256,256">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                <g transform="scale(5.12,5.12)">
+                                    <path d="M25,3c-12.13844,0 -22,9.86156 -22,22c0,11.01913 8.12753,20.13835 18.71289,21.72852l1.14844,0.17383v-17.33594h-5.19727v-3.51953h5.19727v-4.67383c0,-2.87808 0.69065,-4.77363 1.81445,-6.05078c1.1238,-1.27715 2.71138,-2.0293 4.71484,-2.0293c1.5044,0 3.01447,0.2191 3.64844,0.31445v3.71485h-2.07324c-1.39922,0 -1.99949,0.65645 -2.38281,1.08008c-0.38332,0.42363 -0.85499,1.12329 -0.85499,2.23633v5.41894h6.23242l-0.51758,3.51953h-5.71484v17.04102l1.14844,-0.17383c10.58536,-1.59017 18.71289,-10.70939 18.71289,-21.72852c0,-12.13844 -9.86156,-22 -22,-22z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="#">
+                        <svg class="bi" style="padding-top: 7px;" width="24" height="29" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,48,48">
+                            <path fill="#ffffff" d="M24,4C12.96,4,4,12.96,4,24s8.96,20,20,20s20-8.96,20-20S35.04,4,24,4z M35.44,24.98L17.44,34.98 C17.04,35.18,16.66,35.38,16.26,35.38c-0.52,0-1.04-0.26-1.32-0.74C14.52,34.18,14.74,33.28,15.44,32.88l16.92-9.9 c0.7-0.4,0.9-1.3,0.5-2c-0.4-0.7-1.3-0.9-2-0.5L13.94,30.38c-0.7,0.4-1.6,0.18-2-0.5c-0.4-0.7-0.18-1.6,0.5-2L30.94,17.3 c1.04-0.6,2.26-0.6,3.3,0c1.04,0.6,1.66,1.64,1.66,2.8C35.9,21.58,35.74,23.38,35.44,24.98z"></path>
+                        </svg>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<script>document.querySelector("#checkbox").addEventListener("change", () => {document.body.classList.toggle("dark");});</script>
+</body>
+
+</html>

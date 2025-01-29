@@ -1,0 +1,138 @@
+   <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>home</title>
+        <script src="MILL/JS/index.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home page</title>
+        <link rel="stylesheet" href="MILL/bootstrap-5.3.3-dist/bootstrap.min.css">
+        <link rel="stylesheet" href="MILL/bootstrap-5.3.3-dist/bootstrap.min.css">
+        <link rel="stylesheet" href="MILL/CSS/index.css">
+        <script src="https://kit.fontawesome.com/836a943e18.js"crossorigin="anonymous"></script>
+        <!-- <script src="/MILL/JS/theme.js"></script> -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const theme = localStorage.getItem("theme") || "light"; // Default to light if not set
+                if (theme === "dark") {
+                    document.body.classList.add("dark");
+                    document.querySelector("#checkbox").checked = true; // Check the toggle
+                }
+            
+                // Toggle theme on checkbox change
+                document.querySelector("#checkbox").addEventListener("change", () => {
+                    document.body.classList.toggle("dark");
+                    const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+                    localStorage.setItem("theme", currentTheme);
+                });
+            });
+            
+        </script>
+    </head>
+
+    <body class="theme">
+        <header>
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                            <img style="border: #000000 solid 1px; border-radius:40px;" class="bi me-2" src="photos/logo.png" width="40" height="32" role="img" aria-label="Bootstrap">
+                        </a>
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="/product" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="/booking" class="nav-link px-2 text-white">Booking</a></li>
+                        <li><a href="/FAQ" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="/about" class="nav-link px-2 text-white">location</a></li>
+                    </ul>
+                    <input type="checkbox" id="checkbox" class="checkbox" />
+                    <label for="checkbox" class="toggle-theme">
+                      <i class="fas fa-moon"></i>
+                      <i class="fas fa-sun"></i>
+                    </label>
+                    <button id="callmebtn"></button>
+                    <button id="loginbtn">
+                    <a href="/login">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                            <path d="M 26 2 C 13.308594 2 3 12.308594 3 25 C 3 37.691406 13.308594 48 26 48 C 35.917969 48 41.972656 43.4375 45.125 37.78125 C 48.277344 32.125 48.675781 25.480469 47.71875 20.9375 L 47.53125 20.15625 L 46.75 20.15625 L 26 20.125 L 25 20.125 L 25 30.53125 L 36.4375 30.53125 C 34.710938 34.53125 31.195313 37.28125 26 37.28125 C 19.210938 37.28125 13.71875 31.789063 13.71875 25 C 13.71875 18.210938 19.210938 12.71875 26 12.71875 C 29.050781 12.71875 31.820313 13.847656 33.96875 15.6875 L 34.6875 16.28125 L 41.53125 9.4375 L 42.25 8.6875 L 41.5 8 C 37.414063 4.277344 31.960938 2 26 2 Z M 26 4 C 31.074219 4 35.652344 5.855469 39.28125 8.84375 L 34.46875 13.65625 C 32.089844 11.878906 29.199219 10.71875 26 10.71875 C 18.128906 10.71875 11.71875 17.128906 11.71875 25 C 11.71875 32.871094 18.128906 39.28125 26 39.28125 C 32.550781 39.28125 37.261719 35.265625 38.9375 29.8125 L 39.34375 28.53125 L 27 28.53125 L 27 22.125 L 45.84375 22.15625 C 46.507813 26.191406 46.066406 31.984375 43.375 36.8125 C 40.515625 41.9375 35.320313 46 26 46 C 14.386719 46 5 36.609375 5 25 C 5 13.390625 14.386719 4 26 4 Z"></path>
+                        </svg>
+                    </a>
+                    </button>
+                    
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <main>
+                <div class="container">
+                    <div class="mcontainer">
+                        <h1>Why us?</h1><br>
+                        <h3>The main reason to choose us is ...</h3>
+                        <h3>We Believe in 'Quality' over 'Quantity'</h3><br>
+                        <button><strong><a  href="/booking" class="buy">Let's Buy</a></strong></button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img style="border: #000000 solid 1px; border-radius:40px;" class="bi me-2"
+                            src="photos/logo.png" width="40" height="32" role="img" aria-label="Bootstrap">
+                    </a>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <span class="mb-3 mb-md-0 text-light">© 2024 Mama Ni Maher Mini Oil Mill, Inc</span>
+                    </ul>
+
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/umang_borsaniya_">
+                                <svg class="bi color-light" color="white" width="24" height="28"
+                                    xmlns="http://www.w3.org/2000/svg" x="0px" y="3px" viewBox="0,0,300,150">
+                                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <g transform="scale(5.12,5.12)">
+                                            <path
+                                                d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a></li>
+                        <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/umang_borsaniya_">
+                                <svg class="bi" style="padding-top: 7px;" width="24" height="29"
+                                    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,256,256">
+                                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <g transform="scale(5.12,5.12)">
+                                            <path
+                                                d="M25,3c-12.13844,0 -22,9.86156 -22,22c0,11.01913 8.12753,20.13835 18.71289,21.72852l1.14844,0.17383v-17.33594h-5.19727v-3.51953h5.19727v-4.67383c0,-2.87808 0.69065,-4.77363 1.81445,-6.05078c1.1238,-1.27715 2.71138,-2.0293 4.71484,-2.0293c1.5044,0 3.01447,0.2191 3.64844,0.31445v3.71485h-2.07324c-1.39922,0 -1.99949,0.65645 -2.38281,1.08008c-0.38332,0.42363 -0.85499,1.12329 -0.85499,2.23633v5.41894h6.23242l-0.51758,3.51953h-5.71484v17.04102l1.14844,-0.17383c10.58536,-1.59017 18.71289,-10.70939 18.71289,-21.72852c0,-12.13844 -9.86156,-22 -22,-22z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a></li>
+                        <li class="ms-3"><a class="text-body-secondary" href="#">
+                                <svg class="bi" style="padding-top: 7px;" width="24" height="29"
+                                    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,48,48">
+                                    <path fill="#ffffff"
+                                        d="M24,4C12.96,4,4,12.96,4,24s8.96,20,20,20s20-8.96,20-20S35.04,4,24,4z M35.44,24.98L17.44,34.98 C17.04,35.18,16.66,35.38,16.26,35.38c-0.52,0-1.04-0.26-1.32-0.74C14.52,34.18,14.74,33.28,15.44,32.88l16.92-9.9 c0.7-0.4,0.9-1.3,0.5-2c-0.4-0.7-1.3-0.9-2-0.5L13.94,30.38c-0.7,0.4-1.6,0.18-2-0.5c-0.4-0.7-0.18-1.6,0.5-2L30.94,17.3 c1.04-0.6,2.26-0.6,3.3,0c1.04,0.6,1.66,1.64,1.66,2.8C35.9,21.58,35.74,23.38,35.44,24.98z">
+                                    </path>
+                                </svg>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    </html>

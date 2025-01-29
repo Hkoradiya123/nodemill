@@ -1,0 +1,310 @@
+/*:root {
+    --primary-color:  rgba(33, 37, 41, 0.7);
+    --secondary-color: #2ecc71;
+    --background-color:  rgba(33, 37, 41, 0.7);
+    --text-color: #333333;
+}*/
+:root {
+    --primary-color:  rgba(33, 37, 41);
+    --secondary-color: #2ecc71;
+    --background-color:   rgba(94, 94, 94,.6);
+    --body-background-color:   rgba(158, 158, 158, 0.7);
+
+    --text-color: #ffffff;
+}
+
+
+.content, header, footer {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+body {
+    font-family: "Baloo Bhai 2", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: #000000;
+    background: url("../../photos/home.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: transform 0.3   s ease, opacity 0.3s ease, color 0.3   s ease;
+
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    /* Ensure content can scroll if needed */
+    overflow-y: auto;
+}
+
+header {
+    background-color : var(--background-color);
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--background-color);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+#loginbtn {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5px;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 45px;
+    border-radius: 40px;
+    border: 3px solid #42d3a5;
+    background-color: #42d3a5;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
+#loginbtn:hover {
+    background-color: #157758;
+    border: 3px solid #157758;
+}
+
+#loginbtn:active {
+    letter-spacing: 4px;
+}
+
+#loginbtn:after {
+    }
+
+
+
+
+#callbtn {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 40px;
+    border: 3px solid #42d3a5;
+    background-color: #42d3a5;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
+#callbtn:hover {
+    background-color: #157758;
+    border: 3px solid #157758;
+}
+
+#callbtn:active {
+    letter-spacing: 4px;
+}
+
+#callbtn:after {
+    content: "CALL US";
+}
+
+
+.buy {
+    text-decoration: none;
+    color: white;
+}
+
+
+        
+.toggle-theme {
+    margin-right: 10px;
+    background: rgba(0, 93, 93, 0.5);
+    height: 3rem;
+    width: 3rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.toggle-theme:hover,
+.togge-theme:focus {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.toggle-theme i {
+    font-size: 2rem;
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+}
+
+.fa-sun {
+    color: rgb(255, 72, 0);
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.fa-moon {
+    color: rgb(251, 178, 6);
+    transform: translateX(0px);
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked ~ .toggle-theme .fa-sun{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.checkbox:checked ~ .toggle-theme .fa-moon{
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+
+
+.head-large-card {
+    color: #fff !important;
+    background-color: #8d7251;
+}
+.border-primary{
+    
+        --bs-border-opacity: 1;
+        border-color: rgb(141 114 81) !important;
+    
+}
+.text-secondary {
+    --bs-text-opacity: 1;
+    color: rgb(171 190 208) !important;
+}
+/* Dark Theme */
+    
+body.dark {
+    color: #f0f0f0;
+    /* background-color: rgba(0, 0, 0, 1); Black overlay with 50% opacity */
+    background: url("../../photos/home-dark.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        body {
+            background: url("../../photos/home2-dark.jpg"); 
+        }
+    }
+    @media (max-width: 480px) {
+        body {
+            background: url("../../photos/");
+        } 
+    }
+}
+
+
+body.dark header,
+body.dark footer {
+    background-color: rgba(85, 90, 95, 0.7);
+}
+
+body.dark .mcontainer {
+    background-color: rgba(85, 90, 95, 0.7);
+}
+
+body.dark #callbtn {
+    border: 3px solid #ffffff;
+    background-color: #000000;
+    color: #ffffff;
+}
+.mcontainer {
+
+    margin: 10px;
+    padding: 50px;
+
+    /* border: 5px solid wheat; */
+    background-color: var(--body-background-color);
+    border-radius: 20px;
+    /* color: #d7dbd a; */
+    text-align: center;
+    /* Center content within the container */
+}
+.map{
+    border-radius: 20px;
+}
+
+.btn-pricing-large {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #8d7251;
+    --bs-btn-border-color: #8d7251;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #a87c45;
+    --bs-btn-hover-border-color: #8d7251;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #6d583e;
+    --bs-btn-active-border-color: #a87c45;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #8d7251;
+    --bs-btn-disabled-border-color: #8d7251
+}
+.btn-pricing {
+    --bs-btn-color: rgb(141 114 81);
+    --bs-btn-border-color: rgb(141 114 81);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgb(141 114 81);
+    --bs-btn-hover-border-color: rgb(141 114 81);
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: rgb(105 85 61);
+    --bs-btn-active-border-color: rgb(105 85 61);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: rgb(105 85 61);
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: rgb(105 85 61);
+    --bs-gradient: none;
+}
+pricing-card-large{
+/* border-color: rgb(141 114 81); */
+}
+third-card.oo.text-bg-primary {
+    color: #fff;
+    background-color: rgb(141 114 81);
+}
+
+@media (max-width: 768px) {
+    body {
+        background: url("../../photos/home3.jpg");
+    }
+
+    #callbtn {
+        display: none;
+    } 
+
+
+
+
+}
+
+@media (max-width: 480px) {
+    body {
+        background: url("../../photos/home3.jpg");
+    }
+  
+}
