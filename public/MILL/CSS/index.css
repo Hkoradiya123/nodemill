@@ -260,6 +260,10 @@ footer {
     }
     
 
+    body.dark #loginbtn {
+        border: 3px solid #279c77;
+        background-color: #279c77;
+    }
     body.dark header,
     body.dark footer {
         background-color: rgba(85, 90, 95, 0.7);
@@ -269,11 +273,11 @@ footer {
         background-color: rgba(85, 90, 95, 0.7);
     }
 
-    body.dark #callbtn {
-        border: 3px solid #ffffff;
-        background-color: #000000;
-        color: #ffffff;
+    body.dark #callmebtn {
+        border: 3px solid #279c77;
+        background-color: #279c77;
     }
+    
 
     
   

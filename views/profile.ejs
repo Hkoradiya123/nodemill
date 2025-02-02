@@ -43,7 +43,6 @@
             });
         });
     </script>
-
 </head>
 
 <body>
@@ -58,7 +57,7 @@
                         <li><a href="/product" class="nav-link px-2 text-white">Pricing</a></li>
                         <li><a href="/booking" class="nav-link px-2 text-white">Booking</a></li>
                         <li><a href="/FAQ" class="nav-link px-2 text-white">FAQs</a></li>
-                        <li><a href="/about" class="nav-link px-2 text-secondary">Location</a></li>
+                        <li><a href="/about" class="nav-link px-2 text-white">Location</a></li>
                     </ul>
                     <input type="checkbox" id="checkbox" class="checkbox" />
                     <label for="checkbox" class="toggle-theme">
@@ -72,16 +71,38 @@
             </div>
         </header>
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-<div class="content">
+<div class="content mapcontainer">
     <main>
-
-        <div class="container mapcontainer">
-            <div class="mcontainer">
-                <iframe class="map" width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3708.6489715820007!2d71.34352299999999!3d21.638598099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39588540ab475fb1%3A0x67b0e8e254851998!2sMama%20ni%20maher%20mini%20oil%20mill!5e0!3m2!1sen!2sin!4v1727927238980!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
+        <div class="mcontainer modern-container " style=" width: fit-content; margin: auto;">
+            <h1>Welcome, <%= user.name %>! 👋</h1>
+            <br>
+            <button id="logoutbtn"  onclick="window.location.href = '/logout'" > logout </button>
+        </div>   
     </main>
 </div>
+<script>
+     // Functions to toggle forms
+     function showLogin() {
+        document.getElementById('form-title').innerText = 'Login';
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('google-login').style.display = 'none';
+    }
+
+    function showRegister() {
+        document.getElementById('form-title').innerText = 'Register';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+        document.getElementById('google-login').style.display = 'none';
+    }
+
+    function googleLogin() {
+        document.getElementById('form-title').innerText = 'Google Login';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('google-login').style.display = 'block';
+    }
+</script>
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <footer>

@@ -48,9 +48,17 @@ app.use(passport.session());
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
-      const result = await db.query("SELECT * FROM loginmail WHERE email = $1", [username]);
+      const result = await db.query("SELECT * FROM users WHERE email = $1", [username]);
+
       if (result.rows.length > 0) {
         const user = result.rows[0];
+
+        // 🔹 Check if the user is a Google user (no password set)
+        if (!user.password) {
+          return done(null, false, { message: "You signed up with Google. Use Google login." });
+        }
+
+        // 🔹 Compare entered password with stored hashed password
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (isPasswordValid) {
           return done(null, user);
@@ -79,12 +87,14 @@ passport.use(
       try {
         const result = await db.query("SELECT * FROM loginmail WHERE email = $1", [email]);
         if (result.rows.length > 0) {
+          console.log("User logged in: ", result.rows[0]);
           return done(null, result.rows[0]);
         } else {
           const insertResult = await db.query(
             "INSERT INTO loginmail (email, name) VALUES ($1, $2) RETURNING *",
             [email, name]
           );
+          console.log("Inserted User:", insertResult.rows[0])
           return done(null, insertResult.rows[0]);
         }
       } catch (err) {
@@ -171,7 +181,7 @@ app.get(
 
 app.get("/profile", (req, res) => {
   if (req.isAuthenticated()) {
-    res.send(`Welcome ${req.user.name}`);
+    res.render("profile.ejs", { user: req.user }); // Pass user details to EJS
   } else {
     res.redirect("/login");
   }

@@ -54,6 +54,68 @@ footer {
 }
 
 
+#callmebtn {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 40px;
+    border: 3px solid #42d3a5;
+    background-color: #42d3a5;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
+#callmebtn:hover {
+    background-color: #157758;
+    border: 3px solid #157758;
+}
+
+#callmebtn:active {
+    letter-spacing: 4px;
+}
+
+#callmebtn:after {
+    content: "CALL US";
+}
+
+#logoutbtn {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5px;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    /* width: 75px; */
+    border-radius: 16px;
+    border: 3px solid #42d3a5;
+    background-color: #42d3a5;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
+#logoutbtn:hover {
+    background-color: #157758;
+    border: 3px solid #157758;
+}
+
+#logoutbtn:active {
+    letter-spacing: 4px;
+}
+
+#logoutbtn:after {
+    }
+
 #loginbtn {
     font-family: 'Roboto', sans-serif;
     margin-left: 5px;
@@ -87,37 +149,6 @@ footer {
 
 
 
-
-#callbtn {
-    font-family: 'Roboto', sans-serif;
-    outline: none;
-    height: 40px;
-    text-align: center;
-    width: 130px;
-    border-radius: 40px;
-    border: 3px solid #42d3a5;
-    background-color: #42d3a5;
-    color: #000000;
-    letter-spacing: 1px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-
-#callbtn:hover {
-    background-color: #157758;
-    border: 3px solid #157758;
-}
-
-#callbtn:active {
-    letter-spacing: 4px;
-}
-
-#callbtn:after {
-    content: "CALL US";
-}
 
 
 .buy {
@@ -217,21 +248,27 @@ body.dark {
     }
 }
 
+body.dark #loginbtn {
+    border: 3px solid #279c77;
+    background-color: #279c77;
+}
+body.dark #logoutbtn {
+    border: 3px solid #279c77;
+    background-color: #279c77;
+}
 
 body.dark header,
 body.dark footer {
     background-color: rgba(85, 90, 95, 0.7);
 }
-
+body.dark #callmebtn {
+    border: 3px solid #279c77;
+    background-color: #279c77;
+}
 body.dark .mcontainer {
     background-color: rgba(85, 90, 95, 0.7);
 }
 
-body.dark #callbtn {
-    border: 3px solid #ffffff;
-    background-color: #000000;
-    color: #ffffff;
-}
 .mcontainer {
 
     margin: 10px;
