@@ -84,15 +84,17 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       const email = profile.emails[0].value;
       const name = profile.displayName;
+      const profile_picture = profile.photos[0].value;
+      console.log(profile);
       try {
-        const result = await db.query("SELECT * FROM loginmail WHERE email = $1", [email]);
+        const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
         if (result.rows.length > 0) {
           console.log("User logged in: ", result.rows[0]);
           return done(null, result.rows[0]);
         } else {
           const insertResult = await db.query(
-            "INSERT INTO loginmail (email, name) VALUES ($1, $2) RETURNING *",
-            [email, name]
+            "INSERT INTO users (email, name , profile_picture ) VALUES ($1, $2 , $3 ) RETURNING *",
+            [email, name , profile_picture ]
           );
           console.log("Inserted User:", insertResult.rows[0])
           return done(null, insertResult.rows[0]);
@@ -111,7 +113,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (email, done) => {
   try {
-    const result = await db.query("SELECT * FROM loginmail WHERE email = $1", [email]);
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
     if (result.rows.length > 0) {
       done(null, result.rows[0]);
     } else {
@@ -133,9 +135,15 @@ app.get("/FAQ", (req, res) => res.render("FAQ.ejs"));
 
 app.get("/product", (req, res) => res.render("product.ejs"));
 
-app.get("/profile", ensureAuthenticated, (req, res) => {
-  res.render("profile.ejs", { user: req.user }); // Pass the user info to the profile page
+app.get("/profile", (req, res) => {
+  if (req.isAuthenticated()) {
+    console.log("User Data:", req.user); // ✅ Debugging
+    res.render("profile.ejs", { user: req.user });
+  } else {
+    res.redirect("/login");
+  }
 });
+
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
